@@ -1,12 +1,10 @@
-/// <reference types="es6-promise" />
 /// <reference types="express" />
+/// <reference types="es6-promise" />
 import { IAutoScalerImplementation } from 'autoscalable-grid';
 import * as express from 'express';
 export declare type AutoScalerImplementationOnChangeHandler = () => void;
-export declare type AutoScalerImplementationFactory = (options?: any, onChange?: AutoScalerImplementationOnChangeHandler) => Promise<IAutoScalerImplementation>;
 export declare type GetAutoScalerImplementationProc = (req: express.Request) => Promise<IAutoScalerImplementation>;
-export declare type AutoScalerImplementationRouterFactory = (getImplProc: GetAutoScalerImplementationProc) => Promise<express.Router>;
+export declare type AutoScalerImplementationFactory = (getImpl: GetAutoScalerImplementationProc, options?: any, onChange?: AutoScalerImplementationOnChangeHandler) => Promise<[IAutoScalerImplementation, express.Router]>;
 export interface AutoScalerImplementationPackageExport {
     factory: AutoScalerImplementationFactory;
-    routerFactory?: AutoScalerImplementationRouterFactory;
 }
