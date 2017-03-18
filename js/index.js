@@ -14,7 +14,7 @@ function getRequestHandlerForImplementation(getImpl, handler) {
     return function (req, res) {
         getImplementationFromRequest(req, getImpl)
             .then(function (implementation) {
-            return handler(implementation);
+            return handler(req, implementation);
         }).then(function (ret) {
             res.jsonp(ret);
         }).catch(function (err) {

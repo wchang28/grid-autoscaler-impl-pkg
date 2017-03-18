@@ -24,14 +24,14 @@ function getImplementationFromRequest<I>(req: express.Request, getImpl: GetAutoS
 }
 
 export interface ImplementationHandler<I> {
-    (implementation: I) : Promise<any>;
+    (req: express.Request, implementation: I) : Promise<any>;
 }
 
 export function getRequestHandlerForImplementation<I>(getImpl: GetAutoScalerImplementationProc, handler: ImplementationHandler<I>) : express.RequestHandler {
     return (req: express.Request, res: express.Response) => {
         getImplementationFromRequest<I>(req, getImpl)
         .then((implementation: I) => {
-            return handler(implementation);
+            return handler(req, implementation);
         }).then((ret: any) => {
             res.jsonp(ret);
         }).catch((err: any) => {
