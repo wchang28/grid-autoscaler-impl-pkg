@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function getImplementationFromRequest(req, getImpl) {
     return new Promise(function (resolve, reject) {
         getImpl(req)

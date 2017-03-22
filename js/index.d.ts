@@ -1,5 +1,4 @@
 /// <reference types="express" />
-/// <reference types="es6-promise" />
 import { IAutoScalerImplementation } from 'autoscalable-grid';
 import * as express from 'express';
 export declare type AutoScalerImplementationOnChangeHandler = () => void;
