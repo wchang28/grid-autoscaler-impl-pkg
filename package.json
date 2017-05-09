@@ -1,13 +1,14 @@
 {
   "name": "grid-autoscaler-impl-pkg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Grid Autoscaler Implementation Package Interfaces",
   "main": "./js/index.js",
   "typings": "./js/index.d.ts",
   "scripts": {},
   "keywords": [
-    "REST",
-    "API"
+    "Grid",
+    "Autoscaler",
+    "Extension"
   ],
   "repository": {
     "type": "git",
@@ -16,7 +17,6 @@
   "author": "Wen Chang",
   "license": "MIT",
   "dependencies": {
-    "@types/es6-promise": "0.0.32",
     "@types/express": "^4.0.35",
     "autoscalable-grid": "git+https://github.com/wchang28/autoscalable-grid.git"
   }
